@@ -1,0 +1,19 @@
+mint_leaves:
+  id: 1
+  name: "Mint leaves"
+
+white_rum:
+  id: 2
+  name: "White rum"
+
+lime_juice:
+  id: 3
+  name: "Lime juice"
+
+tequila:
+  id: 4
+  name: "Tequila"
+
+triple_sec:
+  id: 5
+  name: "Triple sec"

@@ -1,6 +1,6 @@
 require 'json'
 
-class IngestCocktailData < ActiveRecord::Migration[6.1]
+class IngestCocktailData < ActiveRecord::Migration[8.0]
   def up
     file_path = Rails.root.join('db', 'migrate', 'cocktail_recipes.json')
     cocktail_data = JSON.parse(File.read(file_path))

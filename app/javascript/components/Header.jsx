@@ -28,9 +28,10 @@ const Header = ({ searchInput, setSearchInput, handleSearch }) => {
               onKeyDown={handleKeyDown}
               placeholder="Search all drinks"
               className="search-bar"
+              name="search-bar"
             />
           </div>
-          <button className="go-button" onClick={handleSearch}>
+          <button className="go-button" onClick={handleSearch} name="go-button">
             GO
           </button>
         </div>

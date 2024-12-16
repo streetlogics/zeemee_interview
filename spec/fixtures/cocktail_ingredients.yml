@@ -1,0 +1,29 @@
+mojito_mint_leaves:
+  cocktail_id: 1
+  ingredient_id: 1
+  measurement: "10 leaves"
+
+mojito_white_rum:
+  cocktail_id: 1
+  ingredient_id: 2
+  measurement: "2 oz"
+
+mojito_lime_juice:
+  cocktail_id: 1
+  ingredient_id: 3
+  measurement: "1 oz"
+
+margarita_tequila:
+  cocktail_id: 2
+  ingredient_id: 4
+  measurement: "1 1/2 oz"
+
+margarita_triple_sec:
+  cocktail_id: 2
+  ingredient_id: 5
+  measurement: "1 oz"
+
+margarita_lime_juice:
+  cocktail_id: 2
+  ingredient_id: 3
+  measurement: "1 oz"
