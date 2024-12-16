@@ -1,0 +1,362 @@
+/* styles.css */
+.color-primary {
+  color: #104fc9;
+}
+.color-secondary {
+  color: #0b873d;
+}
+.background-primary {
+  background-color: #104fc9;
+}
+.background-secondary {
+  background: #0b873d;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  color: white; /* Default font color */
+}
+
+.app-container {
+  position: relative;
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.app-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8); /* Black translucent overlay */
+  z-index: 1;
+}
+
+header,
+.container {
+  position: relative;
+  z-index: 2; /* Ensure content is above the overlay */
+}
+
+.container {
+  width: 906px;
+  max-width: calc(100vw - 64px);
+  margin: 0 auto;
+  padding: 32px;
+  flex: 1;
+}
+.container.cocktail-details-container {
+  width: 630px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two cards per row */
+  gap: 32px;
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr; /* Single column on mobile */
+  }
+}
+
+header {
+  padding: 24px;
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+.header-content h1 {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 24px;
+  /* identical to box height, or 100% */
+  letter-spacing: -0.01em;
+}
+
+.logo {
+  position: absolute;
+  left: 0;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: stretch;
+  border: 1px solid #ffffff;
+  border-radius: 8px;
+  margin: 0 auto;
+}
+
+.search-icon {
+  width: 24px;
+  height: 24px;
+  margin: 10px;
+}
+
+.search-bar {
+  width: 100%;
+  padding: 0;
+  font-size: 16px;
+  border: none;
+  background-color: transparent;
+  color: white;
+  outline: none;
+}
+
+::placeholder {
+  color: white;
+  opacity: 1;
+}
+
+.go-button,
+.go-button:hover {
+  background-color: transparent !important;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 14px;
+  box-shadow: none;
+  text-shadow: none;
+  outline: none;
+  margin: 0;
+}
+
+.go-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.card {
+  display: flex;
+  align-items: flex-start;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: left;
+  padding: 16px;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+
+.card:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.card img {
+  width: 137px;
+  height: 137px;
+  height: auto;
+  margin-right: 16px;
+  border-radius: 4px;
+}
+
+.card-content {
+  flex: 1;
+}
+
+.card h3 {
+  margin: 0 0 8px 0;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 24px;
+  letter-spacing: -0.02em;
+}
+
+.category-box {
+  background-color: transparent;
+  color: white;
+  padding: 0 5px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-size: 11px;
+  line-height: 21px;
+  text-align: center;
+  display: inline-block;
+}
+
+.nav-icon {
+  display: inline-block;
+  cursor: pointer;
+  background: rgba(55, 55, 55, 0.5);
+  border: 1px solid rgba(241, 241, 241, 0.6);
+  margin-right: 8px;
+  margin-top: 16px;
+  border-radius: 8px;
+}
+
+.nav-icon img {
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  margin: 6px 7px 6px 8px;
+}
+
+.nav-icon img:first-child {
+  margin-left: 5px;
+}
+
+.nav-icon[style*="opacity: 0.5"] {
+  cursor: not-allowed;
+}
+
+.loading-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.spinner {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 24px;
+}
+.loading-text {
+  font-size: 24px;
+  color: white;
+  text-align: center;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  font-size: 18px;
+}
+
+.result-count {
+  font-size: 14px;
+  color: white;
+}
+
+.cocktail-details-container h1 {
+  margin-bottom: 24px;
+}
+.cocktail-details-box {
+  border: 1px solid white;
+  padding: 16px;
+  border-radius: 8px;
+}
+.cocktail-details-box img {
+  width: 220px;
+  height: 220px;
+  border-radius: 4px;
+}
+.cocktail-ingredients-box {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 16px;
+}
+
+.total-ingredients {
+  font-size: 16px;
+  margin-bottom: 24px;
+  margin-top: 8px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.ingredients-list {
+  margin-left: 32px;
+}
+
+.ingredients-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  padding-left: 0;
+}
+
+.ingredient-item {
+  font-size: 14px;
+  color: white;
+}
+
+.cocktail-details-box .category-box {
+  margin-bottom: 32px;
+}
+.cocktail-details-box h2 {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 16px 0;
+  font-weight: normal;
+}
+.cocktail-details-box p {
+  padding: 0;
+  margin: 0;
+}
+
+.share-box {
+  margin-top: 32px;
+}
+
+.share-link-container {
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.share-link-input {
+  flex: 1;
+  padding: 8px;
+  border-radius: 8px 0 0 8px;
+  background-color: white;
+  color: rgba(0, 0, 0, 0.8);
+  margin-right: 0;
+  border: 0px;
+  outline: none;
+  font-size: 16px;
+  padding: 8px 16px;
+}
+
+.copy-button {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  color: white;
+  border: none;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+img.copy-icon {
+  width: 16px; /* Adjust size as needed */
+  height: 16px;
+  margin-right: 8px; /* Space between icon and text */
+}
