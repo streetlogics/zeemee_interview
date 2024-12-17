@@ -20,13 +20,14 @@ const CocktailDetail = () => {
     try {
       const response = await fetch(`/api/detail?id=${id}`);
       if (!response.ok) {
-        throw new Error("Network response was not ok");
+        console.error("Network response was not ok", response);
+        navigate("/");
       }
       const data = await response.json();
       if (!data) {
         navigate("/");
       } else {
-        setCocktail(data);
+        setCocktail(data["drinks"][0]);
       }
     } catch (error) {
       console.error("Error fetching cocktail details:", error);

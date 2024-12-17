@@ -29,18 +29,20 @@ class Api::CocktailsController < ApplicationController
   def detail
     cocktail = Cocktail.includes(:ingredients).find(params[:id])
     render json: {
-      id: cocktail.id,
-      name: cocktail.name,
-      category: cocktail.category,
-      container: cocktail.container,
-      instructions: cocktail.instructions,
-      image: cocktail.image,
-      ingredients: cocktail.cocktail_ingredients.map do |ci|
-        {
-          name: ci.ingredient.name,
-          measurement: ci.measurement
-        }
-      end
+      "drinks": [{
+        id: cocktail.id,
+        name: cocktail.name,
+        category: cocktail.category,
+        container: cocktail.container,
+        instructions: cocktail.instructions,
+        image: cocktail.image,
+        ingredients: cocktail.cocktail_ingredients.map do |ci|
+          {
+            name: ci.ingredient.name,
+            measurement: ci.measurement
+          }
+        end
+      }]
     }
   end
 end 
