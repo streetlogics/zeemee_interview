@@ -9,12 +9,12 @@ RSpec.describe "Cocktails API", type: :request do
       get "/api/detail", params: { id: cocktail.id }
       expect(response).to have_http_status(:success)
       json_response = JSON.parse(response.body)
-      expect(json_response["name"]).to eq(cocktail.name)
-      expect(json_response["ingredients"].length).to eq(3)
+      expect(json_response["drinks"][0]["name"]).to eq(cocktail.name)
+      expect(json_response["drinks"][0]["ingredients"].length).to eq(3)
     end
 
     it "returns a 404 status when cocktail is not found" do
-      get "/api/detail", params: { id: 9999 } # Assuming 9999 is a non-existent ID
+      get "/api/detail", params: { id: 9999 }
       expect(response).to have_http_status(:not_found)
     end
   end

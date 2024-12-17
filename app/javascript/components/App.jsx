@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
-import CocktailList from "../components/CocktailList";
-import CocktailDetail from "../components/CocktailDetail";
-import Header from "../components/Header";
+import CocktailList from "./CocktailList";
+import CocktailDetail from "./CocktailDetail";
+import Header from "./Header";
 import backgroundImage from "../images/bg.jpg";
 import "@fontsource/varela-round";
 

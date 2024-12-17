@@ -10,6 +10,7 @@ const CocktailDetail = () => {
   const [loading, setLoading] = useState(true);
   const [linkCopied, setLinkCopied] = useState(false);
   const navigate = useNavigate();
+  const shareUrl = `${window.location.origin}/share/${id}/${slug}`;
 
   useEffect(() => {
     fetchCocktailDetail();
@@ -38,8 +39,7 @@ const CocktailDetail = () => {
   };
 
   const handleCopyLink = () => {
-    const link = `/share/${id}/${slug}`;
-    navigator.clipboard.writeText(link).then(() => {
+    navigator.clipboard.writeText(shareUrl).then(() => {
       setLinkCopied(true);
       setTimeout(() => setLinkCopied(false), 2000);
     });
@@ -82,7 +82,7 @@ const CocktailDetail = () => {
             <input
               type="text"
               className="share-link-input"
-              value={`${window.location.origin}/share/${id}/${slug}`}
+              value={shareUrl}
               readOnly
             />
             <button

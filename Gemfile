@@ -40,6 +40,9 @@ gem "thruster", require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
+gem 'webpacker'
+gem 'react-rails'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
@@ -62,10 +65,6 @@ group :test do
   gem "selenium-webdriver"
   gem 'rspec-rails'
   gem 'cucumber-rails', require: false
-  gem 'capybara'
   gem 'capybara-screenshot'
   gem 'database_cleaner-active_record'
 end
-
-gem 'webpacker'
-gem 'react-rails'
